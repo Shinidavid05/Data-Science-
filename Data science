@@ -1,0 +1,31 @@
+
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+Load Titanic dataset from URL (or your local file)
+url = "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv"
+df = pd.read_csv(url)
+
+--- Bar chart for categorical variable: Gender ---
+plt.figure(figsize=(7, 5))
+sns.countplot(x='Sex', data=df, palette='Set1')
+plt.title('Gender Distribution')
+plt.xlabel('Gender')
+plt.ylabel('Count')
+plt.show()
+
+--- Histogram for continuous variable: Age ---
+plt.figure(figsize=(7, 5))
+sns.histplot(df['Age'], kde=True, bins=30, color='skyblue')
+plt.title('Age Distribution')
+plt.xlabel('Age')
+plt.ylabel('Frequency')
+plt.show()
+```
+
+Explanation:
+1. *Bar Chart (Gender Distribution)*:
+   - We use `sns.countplot()` to create a bar chart that shows the number of male and female passengers in the Titanic dataset.
+
+2. *Histogram (Age Distribution)*:
